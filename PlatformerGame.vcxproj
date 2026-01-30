@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <RootNamespace>PlatformerGame</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SFML_DIR)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SFML_DIR)\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SFML_DIR)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SFML_DIR)\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\Sumaira\Downloads\SFML-2.6.2\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Sumaira\Downloads\SFML-2.6.2\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\Sumaira\Downloads\SFML-2.6.2\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Sumaira\Downloads\SFML-2.6.2\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\PlayingState.cpp" />
+    <ClCompile Include="src\ResourceManager.cpp" />
+    <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Enemy.cpp" />
+    <ClCompile Include="src\Collectible.cpp" />
+    <ClCompile Include="src\Platform.cpp" />
+    <ClCompile Include="src\Background.cpp" />
+    <ClCompile Include="src\HUD.cpp" />
+    <ClCompile Include="src\GameState.cpp" />
+    <ClCompile Include="src\MenuState.cpp" />
+    <ClCompile Include="src\PauseState.cpp" />
+    <ClCompile Include="src\GameOverState.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\ResourceManager.h" />
+    <ClInclude Include="src\Animation.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Enemy.h" />
+    <ClInclude Include="src\Collectible.h" />
+    <ClInclude Include="src\Platform.h" />
+    <ClInclude Include="src\Background.h" />
+    <ClInclude Include="src\HUD.h" />
+    <ClInclude Include="src\GameState.h" />
+    <ClInclude Include="src\MenuState.h" />
+    <ClInclude Include="src\PlayingState.h" />
+    <ClInclude Include="src\PauseState.h" />
+    <ClInclude Include="src\GameOverState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="impactPlate_medium_004.ogg">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Baloo2-VariableFont_wght.ttf">
+      <DeploymentContent>true</DeploymentContent>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bg_layer1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bg_layer2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bg_layer3.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bg_layer4.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bronze_1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bronze_2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bronze_3.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bronze_4.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bubble.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bunny1_hurt.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bunny1_jump.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bunny1_ready.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bunny1_stand.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bunny1_walk1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="bunny1_walk2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="buttonSquare_beige_pressed.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="buttonSquare_blue_pressed.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="buttonSquare_brown.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="buttonSquare_brown_pressed.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="buttonSquare_grey.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="buttonSquare_grey_pressed.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="cactus.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="carrot.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="carrots.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="carrot_gold.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="cloud.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="coin_bronze.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="coin_gold.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="coin_silver.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="cursorHand_beige.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flame.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flyMan_fly.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flyMan_jump.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flyMan_stand.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flyMan_still_fly.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flyMan_still_jump.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="flyMan_still_stand.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="gold_1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="gold_2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="gold_3.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="gold_4.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="grass1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="grass2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="grass_brown1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="grass_brown2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_cake.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_cake_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_cake_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_cake_small_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_grass.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_grass_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_grass_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_grass_small_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_sand.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_sand_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_sand_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_sand_small_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_snow.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_snow_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_snow_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_snow_small_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_stone.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_stone_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_stone_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_stone_small_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_wood.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_wood_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_wood_small.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="ground_wood_small_broken.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="iconCheck_beige.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="iconCheck_blue.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="iconCheck_bronze.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="iconCheck_grey.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="iconCircle_beige.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="jetpack.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="jetpack_item.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="lifes.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="lighting_blue.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="lighting_yellow.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="mushroom_brown.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="mushroom_red.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_beige.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_blue.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_brown.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_darkBrown.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_darkGrey.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_green.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_grey.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="particle_pink.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="portal_orange.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="portal_orangeParticle.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="portal_yellow.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="portal_yellowParticle.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="powerup_bubble.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="powerup_bunny.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="powerup_empty.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="powerup_jetpack.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="powerup_wings.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_1 (1).png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_3 (1).png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_3.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_4 (1).png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="silver_4.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="smoke.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikeBall1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikeBall_2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikeMan_jump.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikeMan_stand.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikeMan_walk1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikeMan_walk2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikes_bottom.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spikes_top.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spike_bottom.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spike_top.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spring (1).png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spring.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="springMan_hurt (1).png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="springMan_hurt.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="springMan_stand (1).png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="springMan_stand.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spring_in.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="spring_out.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="sun1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="sun2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wingMan1.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wingMan2.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wingMan3.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wingMan4.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wingMan5.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wing_left.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="wing_right.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
